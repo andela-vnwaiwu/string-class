@@ -51,43 +51,70 @@ describe('String Class', () => {
 	});
 
 	describe('words', () => {
-
+		it('returns a list of the words in the string as an Array', () => {
+			expect('I love good food'.words()).to.be.instanceof(Array);
+			expect('I love good food'.words()).to.be.an('array');
+		});
 	});
 
 	describe('wordCount', () => {
-
+		it('returns the number of words in the string', () => {
+			expect('I am alive and well'.words()).to.equal(5);
+			expect('I would like to play some songs'.words()).to.equal(7)
+		});
 	});
 
 	describe('toCurrency', () => {
-
+		it('returns a currency representation of the String', () => {
+			expect('11111.11'.toCurrency()).to.equal('11,111.11');
+			expect('2535678'.toCurrency()).to.equal('2,535,678.00')
+		});
 	});
 
 	describe('fromCurrency', () => {
-		
+		it('returns a number representation of the currency string', () => {
+			expect('11,111.11'.fromCurrency()).to.equal('11111.11');
+			expect('2,535,678.00'.fromCurrency()).to.equal('2535678');
+		});
 	});
 
-	describe('invereCase', () => {
-
+	describe('inverseCase', () => {
+		it('returns each letter in the string as an inverse of its current case', () => {
+			expect('Mr. Ben'.inverseCase()).to.equal('mR. bEN');
+			expect('Good Morning'.inverseCase()).to.equal('gOOD mORNING');
+			expect('john'.inverseCase()).to.equal('JOHN');
+		});
 	});
 
 	describe('alternatingCase', () => {
-
+		it('returns the letters in alternating cases. It must start with a lower case', () => {
+			expect('Onomatopoeia'.alternatingCase()).to.equal('oNoMaToPoEiA');
+			expect('blessing'.alternatingCase()).to.equal('bLeSsInG');
+		});
 	});
 
 	describe('getMiddle', () => {
+		it('', () => {
 
+		});
 	});
 
 	describe('numberWords', () => {
+		it('', () => {
 
+		});
 	});
 
 	describe('isDigit', () => {
+		it('', () => {
 
+		});
 	});
 
 	describe('doubleCheck', () => {
+		it('', () => {
 
+		});
 	});
 });
 
