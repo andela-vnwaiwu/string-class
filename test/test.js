@@ -73,8 +73,10 @@ describe('String Class', () => {
 
 	describe('fromCurrency', () => {
 		it('returns a number representation of the currency string', () => {
-			expect('11,111.11'.fromCurrency()).to.equal('11111.11');
-			expect('2,535,678.00'.fromCurrency()).to.equal('2535678');
+			const number = 11,111.11;
+			const number2 = 2,535,678.00;
+			expect(number.fromCurrency()).to.equal('11111.11');
+			expect(number2.fromCurrency()).to.equal('2535678');
 		});
 	});
 
@@ -94,26 +96,41 @@ describe('String Class', () => {
 	});
 
 	describe('getMiddle', () => {
-		it('', () => {
-
+		it('returns the character(s) in the middle of the string', () => {
+			expect('friend'.getMiddle()).to.equal('ie');
+			expect('friends'.getMiddle()).to.equal('e')
 		});
 	});
 
 	describe('numberWords', () => {
-		it('', () => {
-
+		it('returns the numbers in words', () => {
+			const number = 325;
+			const number2 = 3465;
+			expect(number.numberWords()).to.equal('three two five');
+			expect(number2.numberWords()).to.equal('three four six five');
 		});
 	});
 
 	describe('isDigit', () => {
-		it('', () => {
-
+		it('returns true if the string is a digit(one number)', () => {
+			const number = 4;
+			expect(number.isDigit()).to.be.true;
+		});
+		it('returns false if the string is not a digit(one number)', () => {
+			const number = 465;
+			expect(number.isDigit()).to.be.false;
 		});
 	});
 
 	describe('doubleCheck', () => {
-		it('', () => {
-
+		it('returns true if a string contains double characters(including whitespace character)', () => {
+			expect('egg Head'.doubleCheck()).to.be.true;
+			expect('eye'.doubleCheck()).to.be.true;
+			expect('cool  Aid'.doubleCheck()).to.be.true;
+		});
+		it('returns false if a string does not contains double characters(including whitespace character)', () => {
+			expect('bread'.doubleCheck()).to.be.false;
+			expect('dragon'.doubleCheck()).to.be.false;
 		});
 	});
 });
