@@ -73,8 +73,8 @@ describe('String Class', () => {
 
 	describe('fromCurrency', () => {
 		it('returns a number representation of the currency string', () => {
-			const number = 11,111.11;
-			const number2 = 2,535,678.00;
+			const number = '11,111.11';
+			const number2 = '2,535,678.00';
 			expect(number.fromCurrency()).to.equal('11111.11');
 			expect(number2.fromCurrency()).to.equal('2535678');
 		});
