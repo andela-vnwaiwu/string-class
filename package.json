@@ -1,0 +1,33 @@
+{
+  "name": "string-class",
+  "version": "1.0.0",
+  "description": "An application that extends the String class and adds more string manipulation features",
+  "main": "string.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-vnwaiwu/string-class.git"
+  },
+  "keywords": [
+    "String",
+    "Javascript",
+    "Prototype",
+    "Oriented",
+    "Programming"
+  ],
+  "author": "Victor Nwaiwu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-vnwaiwu/string-class/issues"
+  },
+  "homepage": "https://github.com/andela-vnwaiwu/string-class#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
