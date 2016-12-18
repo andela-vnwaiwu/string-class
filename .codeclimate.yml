@@ -1,8 +1,8 @@
 engines:
-  eslint:
-    enabled: true
   duplication:
     enabled: false
+  eslint:
+    enabled: true
 ratings:
   paths:
   - "**.js"
