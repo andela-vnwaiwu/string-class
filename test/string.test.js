@@ -1,3 +1,4 @@
+/* eslint no-unused-expressions: 0 */
 const mocha = require('mocha');
 const expect = require('chai').expect;
 
@@ -62,14 +63,14 @@ describe('String Class', () => {
   describe('wordCount', () => {
     it('returns the number of words in the string', () => {
       expect('I am alive and well'.wordCount()).to.equal(5);
-      expect('I would like to play some songs'.wordCount()).to.equal(7)
+      expect('I would like to play some songs'.wordCount()).to.equal(7);
     });
   });
 
   describe('toCurrency', () => {
     it('returns a currency representation of the String', () => {
       expect('11111.11'.toCurrency()).to.equal('11,111.11');
-      expect('2535678'.toCurrency()).to.equal('2,535,678.00')
+      expect('2535678'.toCurrency()).to.equal('2,535,678.00');
     });
   });
 
@@ -77,7 +78,7 @@ describe('String Class', () => {
     it('returns a number representation of the currency string', () => {
       const number = '11,111.11';
       const number2 = '2,535,678.00';
-      number3 = '2,535,678';
+      const number3 = '2,535,678';
       expect(number.fromCurrency()).to.equal('11111.11');
       expect(number2.fromCurrency()).to.equal('2535678.00');
       expect(number3.fromCurrency()).to.equal('2535678');
@@ -102,7 +103,7 @@ describe('String Class', () => {
   describe('getMiddle', () => {
     it('returns the character(s) in the middle of the string', () => {
       expect('friend'.getMiddle()).to.equal('ie');
-      expect('friends'.getMiddle()).to.equal('e')
+      expect('friends'.getMiddle()).to.equal('e');
     });
   });
 
@@ -117,11 +118,11 @@ describe('String Class', () => {
 
   describe('isDigit', () => {
     it('returns true if the string is a digit(one number)', () => {
-      const number = 4;
+      const number = '4';
       expect(number.isDigit()).to.be.true;
     });
     it('returns false if the string is not a digit(one number)', () => {
-      const number = 465;
+      const number = '465';
       expect(number.isDigit()).to.be.false;
     });
   });
@@ -129,7 +130,7 @@ describe('String Class', () => {
   describe('doubleCheck', () => {
     it('returns true if a string contains double characters(including whitespace character)', () => {
       expect('egg Head'.doubleCheck()).to.be.true;
-      expect('eye'.doubleCheck()).to.be.true;
+      expect('greed'.doubleCheck()).to.be.true;
       expect('cool  Aid'.doubleCheck()).to.be.true;
     });
     it('returns false if a string does not contains double characters(including whitespace character)', () => {
@@ -138,6 +139,3 @@ describe('String Class', () => {
     });
   });
 });
-
-
-
