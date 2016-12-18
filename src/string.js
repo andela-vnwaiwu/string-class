@@ -1,4 +1,4 @@
-const stringClass = {
+const stringClassExtensions = {
 
   /**
    * Returns true if the string contains vowels.
@@ -17,7 +17,7 @@ const stringClass = {
     return this.replace(/[a-z]/g, match => String
       .fromCharCode(match.charCodeAt(0) - 32));
   },
-  
+
   /**
    * Returns the String in question but with all characters in their lower cases as applicable.
    * @returns {String}
@@ -69,9 +69,9 @@ const stringClass = {
     if (decimal === undefined) {
       decimal = '00';
     } else {
-      decimal = decimal.substring(0,2);
+      decimal = decimal.substring(0, 2);
     }
-    number = number.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    number = number.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     return `${number}.${decimal}`;
   },
 
@@ -80,11 +80,12 @@ const stringClass = {
    */
   fromCurrency() {
     let [number, decimal] = this.split(/\./g);
-    if ( decimal === undefined) {
-      number = number.split(/\,/g).join('');
-      return number;
+    if (decimal === undefined) {
+      decimal = '';
+      number = number.split(/,/g).join('');
+      return `${number}${decimal}`;
     }
-    number = number.split(/\,/g).join('');
+    number = number.split(/,/g).join('');
     return `${number}.${decimal}`;
   },
 
@@ -93,8 +94,8 @@ const stringClass = {
    * @returns {String}
    */
   inverseCase() {
-    return this.replace(/\w/g, character => /[a-z]/
-      .test(character) ? character.toUpper() : character.toLower());
+    return this.replace(/\w/g, character => (/[a-z]/
+      .test(character) ? character.toUpper() : character.toLower()));
   },
 
   /**
@@ -102,8 +103,8 @@ const stringClass = {
    * @returns {String}
    */
   alternatingCase() {
-    return this.replace(/\w/g, (match, count) => 
-      count % 2 === 0 ? match.toLower() : match.toUpper());
+    return this.replace(/\w/g, (match, count) =>
+      (count % 2 === 0 ? match.toLower() : match.toUpper()));
   },
 
   /**
@@ -112,8 +113,24 @@ const stringClass = {
    */
   getMiddle() {
     const middlePosition = this.length / 2;
-    return (middlePosition === parseInt(middlePosition, 10)) 
-      ? this.substr(middlePosition - 1, 2) : this.charAt(middlePosition)
+    return (middlePosition === parseInt(middlePosition, 10))
+      ? this.substr(middlePosition - 1, 2) : this.charAt(middlePosition);
+  },
+
+   /**
+   * Returns true if a string contains double characters(including whitespace character)
+   * @return {Boolean}
+   */
+  doubleCheck() {
+    return /(.)\1{1}/.test(this);
+  },
+
+  /**
+   * Test if string is single digit
+   * @return {Boolean}
+   */
+  isDigit() {
+    return /^\d{1}$/g.test(this);
   },
 
   /**
@@ -133,9 +150,8 @@ const stringClass = {
       8: 'eight',
       9: 'nine'
     };
-    return this.replace(/\d/g, n => `${digitWordsMap[n]} `).trim();
-  },
-  
+    return this.toString().replace(/\d/g, n => `${digitWordsMap[n]} `).trim();
+  }
 };
 
-Object.assign(String.prototype, stringClass);
+Object.assign(String.prototype, stringClassExtensions);
