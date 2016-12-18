@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/andela-vnwaiwu/string-class.svg?branch=develop)](https://travis-ci.org/andela-vnwaiwu/string-class)   [![Coverage Status](https://coveralls.io/repos/github/andela-vnwaiwu/string-class/badge.svg?branch=develop)](https://coveralls.io/github/andela-vnwaiwu/string-class?branch=develop)
-# string-class
+[![Build Status](https://travis-ci.org/andela-vnwaiwu/string-class.svg?branch=develop)](https://travis-ci.org/andela-vnwaiwu/string-class)   [![Coverage Status](https://coveralls.io/repos/github/andela-vnwaiwu/string-class/badge.svg?branch=develop)](https://coveralls.io/github/andela-vnwaiwu/string-class?branch=develop)  [![Code Climate](https://codeclimate.com/github/andela-vnwaiwu/string-class/badges/gpa.svg)](https://codeclimate.com/github/andela-vnwaiwu/string-class)
+# String Class
 This is the repository that extends the String class in Javascript. Using Prototype Oriented Programming, methods, procedures and instance attributes are added to the String class to support more string manipulation features.
 
 ### How can I get started with the class?
