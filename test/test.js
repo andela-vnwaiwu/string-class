@@ -61,8 +61,8 @@ describe('String Class', () => {
 
   describe('wordCount', () => {
     it('returns the number of words in the string', () => {
-      expect('I am alive and well'.words()).to.equal(5);
-      expect('I would like to play some songs'.words()).to.equal(7)
+      expect('I am alive and well'.wordCount()).to.equal(5);
+      expect('I would like to play some songs'.wordCount()).to.equal(7)
     });
   });
 
@@ -77,8 +77,10 @@ describe('String Class', () => {
     it('returns a number representation of the currency string', () => {
       const number = '11,111.11';
       const number2 = '2,535,678.00';
+      number3 = '2,535,678';
       expect(number.fromCurrency()).to.equal('11111.11');
-      expect(number2.fromCurrency()).to.equal('2535678');
+      expect(number2.fromCurrency()).to.equal('2535678.00');
+      expect(number3.fromCurrency()).to.equal('2535678');
     });
   });
 
@@ -106,9 +108,9 @@ describe('String Class', () => {
 
   describe('numberWords', () => {
     it('returns the numbers in words', () => {
-      const number = 325;
-      const number2 = 3465;
-      expect(number.numberWords()).to.equal('three two five');
+      const number = '325';
+      const number2 = '3465';
+      expect(number.numberWords()).to.deep.equal('three two five');
       expect(number2.numberWords()).to.equal('three four six five');
     });
   });
