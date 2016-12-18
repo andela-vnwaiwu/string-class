@@ -1,0 +1,12 @@
+engines:
+  eslint:
+    enabled: true
+ratings:
+  paths:
+  - "**.js"
+exclude_paths:
+- coverage/
+- node_modules/
+- LICENSE
+- README.md
+- package.json
