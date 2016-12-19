@@ -55,9 +55,9 @@ The limitations of this class is that it is not a standalone class but built on 
 of the string class
 
 ## Contributing
-Fork this repository to your account.
-Clone your repositry: git clone git@github.com:your-username/string-class.git OR git clone https://github.com/your-username/string-class.git
-Create your feature branch: git checkout -b new-feature
-Commit your changes: git commit -m "did something"
-Push to the remote branch: git push origin new-feature
-Open a pull request.
+- Fork this repository to your account.
+- Clone your repositry: git clone git@github.com:your-username/string-class.git OR git clone https://github.com/your-username/string-class.git
+- Create your feature branch: git checkout -b new-feature
+- Commit your changes: git commit -m "did something"
+- Push to the remote branch: git push origin new-feature
+- Open a pull request.
