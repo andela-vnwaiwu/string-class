@@ -1,5 +1,9 @@
-const stringClassExtensions = {
+/**
+ * Javascript String Class Extension
+ * This methods extends the String class prototype methods
+ */
 
+const stringClassExtensions = {
   /**
    * Returns true if the string contains vowels.
    * @returns {Boolean}
