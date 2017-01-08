@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>String Class Extension Method</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/string.js"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper orange lighten-2">
+          <div class="container">
+            <a href="#" class="brand-logo center">STRING CLASS EXTENSIONS</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="intro">
+        <div class="intro-image">
+          <div class="row">
+            <div class="col s5 push-s7">
+              <div class="row">
+                <h4 class="white-text">What is this?</h4>
+                <p class="white-text intro-text">
+                  String Class Extensions are methods that are added to the existing String object prototype to add more functionality.
+                  They also modify some of the existing string class methods.
+                </p>
+                <p class="white-text intro-text"> 
+                  Click the button below to see the list of the methods that extends the string class.
+                </p>
+              </div>
+              <div class="row">
+                <a class="waves-effect waves-light orange lighten-2 btn" href="#method-box">view</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="modal">
+        <div id="method-box" class="modal">
+          <div class="modal-content">
+            <p class="flow-text">Click the <i class="material-icons">add</i> icon to see more info about the method.</p>
+            <ul id="method-list" class="collapsible small-text" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>hasVowel</div>
+                <div class="collapsible-body"><p>Returns true if the string contains vowels</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>toUpper</div>
+                <div class="collapsible-body"><p>Returns the String in question but with all characters in upper cases as applicable.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>toLower</div>
+                <div class="collapsible-body"><p>Returns the String in question but with all characters in their lower cases as applicable</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>ucFirst</div>
+                <div class="collapsible-body"><p>Returns the String in question but changes the First Character to an Upper case</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>isQuestion</div>
+                <div class="collapsible-body"><p>Return true if the string is a question (ending with a question mark).</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>removeSpace</div>
+                <div class="collapsible-body"><p>Returns a list of the words in the string, as an Array. </p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>words</div>
+                <div class="collapsible-body"><p>Returns the number of words in the string</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>wordCount</div>
+                <div class="collapsible-body"><p>Returns a currency representation of the String</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>toCurrency</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>fromCurrency</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>inverseCase</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>alternatingCase</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>getMiddle</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>numberWords</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>isDigit</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">add</i>doubleCheck</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
+      </section>
+      <section id="application">
+        <div class="container">
+          <div id="application-row" class="row">
+            <h4 class="center-align">How To Use</h4>
+            <p class="center-align flow-text">Type in a text, select a method to test with and press ENTER to see the result</p>
+            <div class="col l4 s12 m12 push-l7">
+              <div id="result-area" class="row">
+                <h5 class="center-align">Result</h5>
+                <div id="result">
+                </div>
+              </div>
+            </div>
+            <div class="col l5 s12 m12 pull-l3">
+              <div class="row">
+                <div class="input-field col l12">
+                  <input placeholder="Enter text to test" id="input" type="text" class="validate">
+                  <label for="input">String Input</label>
+                </div>
+                <div class="input-field col l12">
+                  <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>Methods</label>
+                </div>  
+              </div>
+              <div class="row">
+                <button class="waves-effect waves-light green btn">Get Result</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer orange darken-2">
+      <div class="footer-copyright center-align">
+        © 2017 Copyright Victor Nwaiwu
+      </div>
+    </footer>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('select').material_select();
+        $('.modal').modal();
+      });
+    </script>
+  </body>
+
+</html>
