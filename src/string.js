@@ -65,6 +65,9 @@ const stringClassExtensions = {
    * @returns {String}
    */
   toCurrency() {
+    if (!Number(this)) {
+      return 'This is not a Number';
+    }
     let [number, decimal] = this.split(/\./g);
     if (decimal === undefined) {
       decimal = '00';
@@ -77,6 +80,7 @@ const stringClassExtensions = {
 
   /**
    * Returns a number representation of the Currency String
+   * @returns {String}
    */
   fromCurrency() {
     let [number, decimal] = this.split(/\./g);
@@ -138,6 +142,9 @@ const stringClassExtensions = {
    * @returns {String}
    */
   numberWords() {
+    if (!Number(this)) {
+      return 'This is not a Number';
+    }
     const digitWordsMap = {
       0: 'zero',
       1: 'one',
