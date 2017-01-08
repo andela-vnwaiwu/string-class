@@ -1,3 +1,4 @@
+/* eslint amd:true */
 require('dotenv').config();
 
 const gulp = require('gulp');
