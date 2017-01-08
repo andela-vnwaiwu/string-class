@@ -72,16 +72,17 @@ describe('String Class', () => {
       expect('11111.11'.toCurrency()).to.equal('11,111.11');
       expect('2535678'.toCurrency()).to.equal('2,535,678.00');
     });
+    it('returns an error message if the string is not of type "number"', () => {
+      expect('Mother'.toCurrency()).to.deep.equal('This is not a Number');
+      expect('Andela'.toCurrency()).to.deep.equal('This is not a Number');
+    });
   });
 
   describe('fromCurrency', () => {
     it('returns a number representation of the currency string', () => {
-      const number = '11,111.11';
-      const number2 = '2,535,678.00';
-      const number3 = '2,535,678';
-      expect(number.fromCurrency()).to.equal('11111.11');
-      expect(number2.fromCurrency()).to.equal('2535678.00');
-      expect(number3.fromCurrency()).to.equal('2535678');
+      expect('11,111.11'.fromCurrency()).to.equal('11111.11');
+      expect('2,535,678.00'.fromCurrency()).to.equal('2535678.00');
+      expect('2,535,678'.fromCurrency()).to.equal('2535678');
     });
   });
 
@@ -109,21 +110,24 @@ describe('String Class', () => {
 
   describe('numberWords', () => {
     it('returns the numbers in words', () => {
-      const number = '325';
-      const number2 = '3465';
-      expect(number.numberWords()).to.deep.equal('three two five');
-      expect(number2.numberWords()).to.equal('three four six five');
+      expect('325'.numberWords()).to.deep.equal('three two five');
+      expect('3465'.numberWords()).to.deep.equal('three four six five');
+    });
+    it('returns an error message if the text is not of type "number"', () => {
+      expect('Family'.numberWords()).to.deep.equal('This is not a Number');
+      expect('Brother'.numberWords()).to.deep.equal('This is not a Number');
     });
   });
 
   describe('isDigit', () => {
     it('returns true if the string is a digit(one number)', () => {
-      const number = '4';
-      expect(number.isDigit()).to.be.true;
+      expect('4'.isDigit()).to.be.true;
     });
     it('returns false if the string is not a digit(one number)', () => {
-      const number = '465';
-      expect(number.isDigit()).to.be.false;
+      expect('465'.isDigit()).to.be.false;
+    });
+     it('returns false if the text is not of type "number"', () => {
+      expect('Mother'.isDigit()).to.be.false;
     });
   });
 
