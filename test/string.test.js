@@ -126,7 +126,7 @@ describe('String Class', () => {
     it('returns false if the string is not a digit(one number)', () => {
       expect('465'.isDigit()).to.be.false;
     });
-     it('returns false if the text is not of type "number"', () => {
+    it('returns false if the text is not of type "number"', () => {
       expect('Mother'.isDigit()).to.be.false;
     });
   });
