@@ -17,7 +17,8 @@ describe('String Class', () => {
   });
 
   describe('toUpper', () => {
-    it('returns the String in question but with all characters in upper cases as applicable', () => {
+    it(`returns the String in question but with all characters in upper cases
+        as applicable`, () => {
       expect('andela'.toUpper()).to.equal('ANDELA');
       expect('Andela'.toUpper()).to.equal('ANDELA');
       expect('EXCELLENCE'.toUpper()).to.equal('EXCELLENCE');
@@ -25,7 +26,8 @@ describe('String Class', () => {
   });
 
   describe('toLower', () => {
-    it('returns the String in question but with all characters in their lower cases as applicable', () => {
+    it(`returns the String in question but with all characters in their lower
+        cases as applicable`, () => {
       expect('BRILLIANCE'.toLower()).to.equal('brilliance');
       expect('MAnnequiN'.toLower()).to.equal('mannequin');
       expect('andela'.toLower()).to.equal('andela');
@@ -33,7 +35,8 @@ describe('String Class', () => {
   });
 
   describe('ucFirst', () => {
-    it('returns the String in question but changes the first character to an upper case', () => {
+    it(`returns the String in question but changes the first character to an
+        upper case`, () => {
       expect('mama'.ucFirst()).to.equal('Mama');
       expect('nigeria'.ucFirst()).to.equal('Nigeria');
       expect('mONDAY'.ucFirst()).to.equal('MONDAY');
@@ -42,12 +45,14 @@ describe('String Class', () => {
   });
 
   describe('isQuestion', () => {
-    it('returns true if the string is a question (ending with a question mark)', () => {
+    it(`returns true if the string is a question 
+        (ending with a question mark)`, () => {
       expect('Who are you?'.isQuestion()).to.be.true;
       expect('Are you there?'.isQuestion()).to.be.true;
       expect('what?'.isQuestion()).to.be.true;
     });
-    it('returns false if the string is not a question (ending with a question mark)', () => {
+    it(`returns false if the string is not a question
+        (ending with a question mark)`, () => {
       expect('where are you'.isQuestion()).to.be.false;
       expect('welcome home'.isQuestion()).to.be.false;
     });
@@ -72,7 +77,7 @@ describe('String Class', () => {
       expect('11111.11'.toCurrency()).to.equal('11,111.11');
       expect('2535678'.toCurrency()).to.equal('2,535,678.00');
     });
-    it('returns an error message if the string is not of type "number"', () => {
+    it('returns an error message if the string is not of a "number"', () => {
       expect('Mother'.toCurrency()).to.deep.equal('This is not a Number');
       expect('Andela'.toCurrency()).to.deep.equal('This is not a Number');
     });
@@ -87,7 +92,8 @@ describe('String Class', () => {
   });
 
   describe('inverseCase', () => {
-    it('returns each letter in the string as an inverse of its current case', () => {
+    it(`returns each letter in the string as an inverse of 
+        its current case`, () => {
       expect('Mr. Ben'.inverseCase()).to.equal('mR. bEN');
       expect('Good Morning'.inverseCase()).to.equal('gOOD mORNING');
       expect('john'.inverseCase()).to.equal('JOHN');
@@ -95,7 +101,8 @@ describe('String Class', () => {
   });
 
   describe('alternatingCase', () => {
-    it('returns the letters in alternating cases. It must start with a lower case', () => {
+    it(`returns the letters in alternating cases. 
+        It must start with a lower case`, () => {
       expect('Onomatopoeia'.alternatingCase()).to.equal('oNoMaToPoEiA');
       expect('blessing'.alternatingCase()).to.equal('bLeSsInG');
     });
@@ -132,12 +139,14 @@ describe('String Class', () => {
   });
 
   describe('doubleCheck', () => {
-    it('returns true if a string contains double characters(including whitespace character)', () => {
+    it(`returns true if a string contains double characters
+        (including whitespace character)`, () => {
       expect('egg Head'.doubleCheck()).to.be.true;
       expect('greed'.doubleCheck()).to.be.true;
       expect('cool  Aid'.doubleCheck()).to.be.true;
     });
-    it('returns false if a string does not contains double characters(including whitespace character)', () => {
+    it(`returns false if a string does not contains double 
+        characters(including whitespace character)`, () => {
       expect('bread'.doubleCheck()).to.be.false;
       expect('dragon'.doubleCheck()).to.be.false;
     });

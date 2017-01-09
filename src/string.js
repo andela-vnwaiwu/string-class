@@ -1,8 +1,9 @@
 const stringClassExtensions = {
 
   /**
-   * Returns true if the string contains vowels.
-   * @returns {Boolean}
+   * hasVowels
+   * Returns true if the string contains vowels or false if it does not
+   * @returns {Boolean} true or false
    */
   hasVowels() {
     const vowelRegex = /[aeiou]/i;
@@ -10,8 +11,10 @@ const stringClassExtensions = {
   },
 
   /**
-   * Returns the String in question but with all characters in upper cases as applicable.
-   * @returns {String}
+   * toUpper
+   * Returns the String in question but with
+   * all characters in upper cases as applicable
+   * @returns {String} string with all characters in upper case
    */
   toUpper() {
     return this.replace(/[a-z]/g, match => String
@@ -19,8 +22,10 @@ const stringClassExtensions = {
   },
 
   /**
-   * Returns the String in question but with all characters in their lower cases as applicable.
-   * @returns {String}
+   * toLower
+   * Returns the string in question but with all
+   * characters in their lower cases as applicable
+   * @returns {String} string with all characters to lower case
    */
   toLower() {
     return this.replace(/[A-Z]/g, match => String
@@ -28,16 +33,19 @@ const stringClassExtensions = {
   },
 
   /**
-   * Returns the String in question but changes the First Character to an Upper case.
-   * @returns {String}
+   * ucFirst
+   * Returns the string in question but changes the first character
+   * to an Upper case.
+   * @returns {String} string with capitalized first letter
    */
   ucFirst() {
     return this.replace(this[0], this[0].toUpper());
   },
 
   /**
+   * isQuestion
    * Returns true if the string is a question (ending with a question mark)
-   * @returns {Boolean}
+   * @returns {Boolean} true or false
    */
   isQuestion() {
     const regexType = /\?$/g;
@@ -45,24 +53,27 @@ const stringClassExtensions = {
   },
 
   /**
-   * Returns a list of the words in the string, as an Array.
-   * @returns {Array}
+   * words
+   * Returns a list of the words in the string, as an Array
+   * @returns {Array} array of words in the string
    */
   words() {
     return this.replace(/[^a-z0-9A-Z\s]/g, '').split(/\s+/);
   },
 
   /**
+   * wordCount
    * Returns the number of words in the string
-   * @returns {Number}
+   * @returns {Number} number of words in the string
    */
   wordCount() {
     return this.words().length;
   },
 
   /**
+   * toCurrency
    * Returns a currency representation of the String
-   * @returns {String}
+   * @returns {String} string of numbers
    */
   toCurrency() {
     if (!Number(this)) {
@@ -79,8 +90,9 @@ const stringClassExtensions = {
   },
 
   /**
+   * fromCurrency
    * Returns a number representation of the Currency String
-   * @returns {String}
+   * @returns {String} string of numbers
    */
   fromCurrency() {
     let [number, decimal] = this.split(/\./g);
@@ -94,8 +106,9 @@ const stringClassExtensions = {
   },
 
   /**
+   * inverseCase
    * Returns each letter in the string as an inverse of its current case
-   * @returns {String}
+   * @returns {String} inverted form of the string
    */
   inverseCase() {
     return this.replace(/\w/g, character => (/[a-z]/
@@ -103,8 +116,9 @@ const stringClassExtensions = {
   },
 
   /**
+   * alternatingCase
    * Returns the letters in alternating cases. It must start with a lower case
-   * @returns {String}
+   * @returns {String} string in alternating cases starting with lower case
    */
   alternatingCase() {
     return this.replace(/\w/g, (match, count) =>
@@ -112,8 +126,9 @@ const stringClassExtensions = {
   },
 
   /**
+   * getMiddle
    * Returns the character(s) in the middle of the string
-   * @returns {String}
+   * @returns {String} character(s) in the middle of the string
    */
   getMiddle() {
     const middlePosition = this.length / 2;
@@ -122,24 +137,28 @@ const stringClassExtensions = {
   },
 
    /**
-   * Returns true if a string contains double characters(including whitespace character)
-   * @return {Boolean}
+    * doubleCheck
+   * Returns true if a string contains double characters
+   * (including whitespace character)
+   * @return {Boolean} true or false
    */
   doubleCheck() {
     return /(.)\1{1}/.test(this);
   },
 
   /**
+   * isDigit
    * Test if string is single digit
-   * @return {Boolean}
+   * @return {Boolean} true or false
    */
   isDigit() {
     return /^\d{1}$/g.test(this);
   },
 
   /**
+   * numberWords
    * Returns the numbers in words e.g 325 should return three two five.
-   * @returns {String}
+   * @returns {String} string form of numbers
    */
   numberWords() {
     if (!Number(this)) {
