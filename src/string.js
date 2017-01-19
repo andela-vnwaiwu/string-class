@@ -76,7 +76,7 @@ const stringClassExtensions = {
    * @returns {String} string of numbers
    */
   toCurrency() {
-    if (/[^\d.]/.test(this) || /\..*\./.test(this)) {  
+    if (/[^\d.]/.test(this) || /\..*\./.test(this)) {
       return 'Invalid Currency Format';
     }
 
