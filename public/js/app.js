@@ -18,21 +18,13 @@ angular.module('StringExtension', [])
     'isDigit',
     'doubleCheck'
   ];
-
   $scope.result = '';
-  $scope.error = '';
-  $scope.getResult = (input, selected) => {
-    if (input === '' || input === undefined) {
-      $scope.result = '';
-      $scope.error = 'You did not enter any text';
-      return;
-    } else if (selected === undefined) {
-      $scope.result = '';
-      $scope.error = 'You did not select a method';
-      return;
+  $scope.getResult = () => {
+    try {
+      $scope.input && $scope.selected ? ($scope.result =  $scope.input[$scope.selected]()) : '';
+    } catch (error) {
+      $scope.result = error.message;
     }
-    $scope.error = '';
-    $scope.result = input[selected]();
-    return;
+    return $scope.result;
   }
 }])
