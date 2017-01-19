@@ -36,3 +36,8 @@ main {
   background: url('../img/background-img2.jpg') center center;
   padding: 5%;
 }
+
+.error {
+  font-size: 10px;
+  color: #ff0000;
+}
