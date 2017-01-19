@@ -48,8 +48,8 @@ const stringClassExtensions = {
    * @returns {Boolean} true or false
    */
   isQuestion() {
-    const regexType = /\?$/g;
-    return regexType.test(this);
+    const regexType = /^[\w]+([. \w]+)?\?$/;
+    return regexType.test(this.trim());
   },
 
   /**
@@ -76,17 +76,12 @@ const stringClassExtensions = {
    * @returns {String} string of numbers
    */
   toCurrency() {
-    if (!Number(this)) {
-      return 'This is not a Number';
+    if (/[^\d.]/.test(this) || /\..*\./.test(this)) {  
+      return 'Invalid Currency Format';
     }
-    let [number, decimal] = this.split(/\./g);
-    if (decimal === undefined) {
-      decimal = '00';
-    } else {
-      decimal = decimal.substring(0, 2);
-    }
-    number = number.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-    return `${number}.${decimal}`;
+
+    const currencyValue = Number(this).toFixed(2);
+    return currencyValue.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
   },
 
   /**
