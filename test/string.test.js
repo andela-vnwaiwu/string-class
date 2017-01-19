@@ -1,3 +1,4 @@
+/* eslint amd:true */
 /* eslint no-unused-expressions: 0 */
 const chai = require('chai');
 
