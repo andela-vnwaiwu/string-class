@@ -1,5 +1,8 @@
 /* eslint no-unused-expressions: 0 */
-const expect = require('chai').expect;
+const chai = require('chai');
+
+const expect = chai.expect;
+const assert = chai.assert;
 
 require('../src/string');
 
@@ -77,13 +80,9 @@ describe('String Class', () => {
       expect('2535678'.toCurrency()).to.equal('2,535,678.00');
       expect('1234567.'.toCurrency()).to.equal('1,234,567.00');
     });
-    it('returns an error message if the string is not of a "number"', () => {
-      expect('Mother'.toCurrency()).to.deep.equal('Invalid Currency Format');
-      expect('Andela'.toCurrency()).to.deep.equal('Invalid Currency Format');
-    });
-    it(`returns an error message if the string is not in a 
-        currency format`, () => {
-      expect('15248.15.45'.toCurrency()).to.deep.equal('Invalid Currency Format');
+    it('should throw an error for invalid numbers', () => {
+      assert.throws('Mother'.toCurrency, TypeError, 'Invalid number');
+      assert.throws('15248.15.45'.toCurrency, TypeError, 'Invalid number');
     });
   });
 

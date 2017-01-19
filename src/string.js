@@ -77,7 +77,7 @@ const stringClassExtensions = {
    */
   toCurrency() {
     if (/[^\d.]/.test(this) || /\..*\./.test(this)) {
-      return 'Invalid Currency Format';
+      throw new TypeError('Invalid number');
     }
 
     const currencyValue = Number(this).toFixed(2);
