@@ -1,5 +1,4 @@
 /* eslint no-unused-expressions: 0 */
-const mocha = require('mocha');
 const expect = require('chai').expect;
 
 require('../src/string');
@@ -76,18 +75,22 @@ describe('String Class', () => {
     it('returns a currency representation of the String', () => {
       expect('11111.11'.toCurrency()).to.equal('11,111.11');
       expect('2535678'.toCurrency()).to.equal('2,535,678.00');
+      expect('1234567.'.toCurrency()).to.equal('1,234,567.00');
     });
     it('returns an error message if the string is not of a "number"', () => {
-      expect('Mother'.toCurrency()).to.deep.equal('This is not a Number');
-      expect('Andela'.toCurrency()).to.deep.equal('This is not a Number');
+      expect('Mother'.toCurrency()).to.deep.equal('Invalid Currency Format');
+      expect('Andela'.toCurrency()).to.deep.equal('Invalid Currency Format');
+    });
+    it(`returns an error message if the string is not in a 
+        currency format`, () => {
+      expect('15248.15.45'.toCurrency()).to.deep.equal('Invalid Currency Format');
     });
   });
 
   describe('fromCurrency', () => {
     it('returns a number representation of the currency string', () => {
-      expect('11,111.11'.fromCurrency()).to.equal('11111.11');
-      expect('2,535,678.00'.fromCurrency()).to.equal('2535678.00');
       expect('2,535,678'.fromCurrency()).to.equal('2535678');
+      expect('2,535,678.11'.fromCurrency()).to.equal('2535678.11');
     });
   });
 
